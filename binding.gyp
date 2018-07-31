@@ -53,7 +53,7 @@
               {
                 "files": [
                   "<(PRODUCT_DIR)/libeay32.dll",
-                  "<(PRODUCT_DIR)/msvcr120.dll"
+                  "<(PRODUCT_DIR)/msvcp140.dll"
                 ],
                 "destination": "<(module_path)"
               }
