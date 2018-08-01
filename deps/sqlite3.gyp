@@ -72,7 +72,8 @@
       { # Linux
         'link_settings': {
           'libraries': [
-            '-lcrypto'
+            # This statically links libcrypto, whereas -lcrypto would dynamically link it
+            '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/OpenSSL-Linux/libcrypto.a'
           ]
         }
       }]
@@ -112,7 +113,7 @@
             {
               "files": [
                 '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/>(openssl_root)/libeay32.dll',
-                '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/>(openssl_root)/msvcr120.dll'
+                '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/>(openssl_root)/msvcp140.dll'
               ],
               "destination": "<(PRODUCT_DIR)"
             }
@@ -138,7 +139,8 @@
         },
         { # linux
           'include_dirs': [
-            '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/'
+            '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/',
+            '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/openssl-include/'
           ]
         }]
       ],
