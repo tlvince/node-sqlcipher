@@ -65,7 +65,7 @@
         'link_settings': {
           'libraries': [
             # This statically links libcrypto, whereas -lcrypto would dynamically link it
-            '<(openssl_root)/lib/libcrypto.a'
+            '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/OpenSSL-macOS/libcrypto.a'
           ]
         }
       },
@@ -134,7 +134,7 @@
         "OS == \"mac\"", {
           'include_dirs': [
             '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/',
-            '>(openssl_root)/include'
+            '<(SHARED_INTERMEDIATE_DIR)/sqlcipher-amalgamation-<@(sqlite_version)/openssl-include/'
           ]
         },
         { # linux
