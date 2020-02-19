@@ -29,13 +29,12 @@ Copy these files to a new folder, `sqlcipher-amalgamation-<version>`.
 
 NodeJS typically includes OpenSSL. However, for Electron on Windows, we need to bundle a copy.
 
-Download OpenSSL 1.0.x from https://slproweb.com/products/Win32OpenSSL.html, both 32-bit and 64-bit versions. Install locally, then copy these files:
+Download OpenSSL 1.1.1x from https://www.openssl.org/source/, both 32-bit and 64-bit versions. Install locally, then copy these files:
 
 ```
-lib/libeay32.lib
-lib/ssleay32.lib
-bin/libeay32.dll
-bin/msvcr120.dll
+libcrypto.lib
+libssl.lib
+ossl_static.pdb
 ```
 
 Place these files in `sqlcipher-amalgamation-<version>/OpenSSL-Win32` and `sqlcipher-amalgamation-<version>/OpenSSL-Win64`.

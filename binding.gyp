@@ -48,20 +48,6 @@
             "destination": "<(module_path)"
           }
       ],
-      "conditions": [
-        ["OS == \"win\"", {
-          "copies": [
-              {
-                "files": [
-                  "<(PRODUCT_DIR)/libeay32.dll",
-                  "<(PRODUCT_DIR)/msvcp140.dll",
-                  "<(PRODUCT_DIR)/vcruntime140.dll"
-                ],
-                "destination": "<(module_path)"
-              }
-          ]
-        }]
-      ]
     }
   ]
 }

@@ -21,6 +21,12 @@ describe('sqlcipher', function() {
         db.run("PRAGMA key = 'mysecret'", done);
     });
 
+    it("should be running sqlcipher", function(done) {
+        db.get("PRAGMA cipher_version", (err, result) => {
+            assert.deepEqual(result, { cipher_version: '4.3.0 community' });
+            done(err);
+        });
+    });
 
     it("should use openssl", function(done) {
         db.get("PRAGMA cipher_provider", (err, result) => {
